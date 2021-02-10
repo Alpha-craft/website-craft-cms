@@ -1,0 +1,30 @@
+dateModified: 1612926618
+email:
+  fromEmail: ainurahman03@gmail.com
+  fromName: Alpha-craft
+  transportType: craft\mail\transportadapters\Sendmail
+plugins:
+  dumper:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  super-table:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.2.1
+system:
+  edition: solo
+  live: true
+  name: Alpha-craft
+  schemaVersion: 3.6.1
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

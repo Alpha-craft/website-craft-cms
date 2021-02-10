@@ -1,0 +1,8 @@
+baseUrl: $PRIMARY_SITE_URL
+handle: default
+hasUrls: true
+language: en
+name: Alpha-craft
+primary: true
+siteGroup: 4acb75c7-1668-4f36-ba6f-9c7433c1957e
+sortOrder: 1

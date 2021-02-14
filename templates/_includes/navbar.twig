@@ -1,0 +1,27 @@
+{% set home = currentSite.baseUrl %}
+{% set navbar = [
+  {'page' : 'Home', 'url' : '' ~ home},
+  {'page' : 'Plant', 'url' : home ~ 'plants'},
+  {'page' : 'About', 'url' : home ~ 'page/about'}
+] %}
+
+<div class="bg-green-500 font-sans h-auto sticky top-0 shadow-md md:text-2xl">
+    <ul>
+        <div class="flex flex-row">
+            <li class="flex-none list-none px-2 ">
+                Planty
+            </li>
+            <li class="flex-auto">
+
+            </li>
+            {% for nav in navbar %}
+            <li class="flex-none list-none">
+                <a href="{{nav.url}}" class="px-4 transition duration-500 ease-out rounded  cursor-pointer text-center md:text-xl  hover:text-gray-100 py-2">
+                    {{nav.page}}
+                </a>
+            </li>
+            {% endfor %}
+            {# {{ dump(navbar) }} #}
+        </div>
+    </ul>
+</div>

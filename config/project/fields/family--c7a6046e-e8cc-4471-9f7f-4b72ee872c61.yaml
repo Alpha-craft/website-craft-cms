@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: cb72e9ae-6f7a-4d33-927a-22365bdfeb64
+handle: family
+instructions: 'Plant''s family'
+name: Family
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: Family
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

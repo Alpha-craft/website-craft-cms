@@ -1,0 +1,78 @@
+contentColumnType: string
+fieldGroup: 1e4c6c2e-7d8e-4484-8eae-392bda9127b0
+handle: moisture
+instructions: 'Prefers / Can Tolerate Moisture '
+name: 'Moisture '
+searchable: false
+settings:
+  multi: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Extremely Dry'
+        -
+          - value
+          - extremelyDry
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Dry / Free raining'
+        -
+          - value
+          - dryFreeRaining
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - ' Average'
+        -
+          - value
+          - average
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Moist '
+        -
+          - value
+          - moist
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - ' Wet / Poor Drainage'
+        -
+          - value
+          - wetPoorDrainage
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Boggy
+        -
+          - value
+          - boggy
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Checkboxes

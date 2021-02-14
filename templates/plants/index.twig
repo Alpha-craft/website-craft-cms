@@ -1,0 +1,32 @@
+{% extends "_layouts/layout.twig" %}
+
+{% block content %}
+<div class="container mx-auto">
+  {% set query = craft.entries()
+    .section('plants')
+    .limit(3) %}
+
+    {% paginate query as pageInfo, pageEntries %}
+
+    {% for entry in pageEntries %}
+      <h1>{{ entry.title }}</h1>
+      <img src="{{entry.image.one().url}}" alt="">  
+    {% endfor %}
+
+  {% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">Previous Page</a>{% endif %}
+  {% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">Next Page</a>{% endif %}
+</div>
+
+{# <div class="container mx-auto">
+  {% set entry = craft.entries.section('plants').all() %}
+
+    {% for content in entry %}
+    <a href="{{content.url}}">
+      <img src="{{content.image.one().url}}" alt="">
+      <p>
+        {{content.title}}
+      </p>
+    </a>
+    {% endfor %}
+</div> #}
+{% endblock  %}

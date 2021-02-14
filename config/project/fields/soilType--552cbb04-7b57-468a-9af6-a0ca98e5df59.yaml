@@ -1,0 +1,78 @@
+contentColumnType: string
+fieldGroup: 1e4c6c2e-7d8e-4484-8eae-392bda9127b0
+handle: soilType
+instructions: 'Prefers / Can Tolerate Soil Type '
+name: 'Soil Type '
+searchable: false
+settings:
+  multi: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Sandy
+        -
+          - value
+          - sandy
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Clay
+        -
+          - value
+          - clay
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - ' Silt'
+        -
+          - value
+          - silt
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Loam
+        -
+          - value
+          - loam
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Peat
+        -
+          - value
+          - peat
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Chalky
+        -
+          - value
+          - chalky
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Checkboxes

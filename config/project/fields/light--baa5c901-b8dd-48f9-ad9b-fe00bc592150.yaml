@@ -1,0 +1,67 @@
+contentColumnType: string
+fieldGroup: 1e4c6c2e-7d8e-4484-8eae-392bda9127b0
+handle: light
+instructions: 'Prefers / Can Tolerate Light'
+name: Light
+searchable: false
+settings:
+  multi: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Full Sun'
+        -
+          - value
+          - fullSun
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Full Sun / Partial Shade'
+        -
+          - value
+          - fullSunPartialShade
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Partial Shade'
+        -
+          - value
+          - partialShade
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Dappled Shade'
+        -
+          - value
+          - dappledShade
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - ' Full Shade'
+        -
+          - value
+          - fullShade
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Checkboxes

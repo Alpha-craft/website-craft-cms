@@ -1,0 +1,19 @@
+contentColumnType: integer(10)
+fieldGroup: 1e4c6c2e-7d8e-4484-8eae-392bda9127b0
+handle: temperatureHigh
+instructions: 'Prefers / Can Tolerate Temperature (Celcius)'
+name: 'Temperature High'
+searchable: false
+settings:
+  decimals: 0
+  defaultValue: null
+  max: null
+  min: '0'
+  prefix: null
+  previewCurrency: ''
+  previewFormat: decimal
+  size: null
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

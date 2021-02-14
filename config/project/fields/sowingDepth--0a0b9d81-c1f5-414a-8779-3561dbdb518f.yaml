@@ -1,0 +1,19 @@
+contentColumnType: integer(10)
+fieldGroup: 73e40fc9-1289-45d9-9c05-551d9f9fafed
+handle: sowingDepth
+instructions: 'sowing depth (inch)'
+name: 'sowing depth'
+searchable: false
+settings:
+  decimals: 0
+  defaultValue: '0'
+  max: null
+  min: '0'
+  prefix: 'sowing depth (inch)'
+  previewCurrency: ''
+  previewFormat: decimal
+  size: null
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

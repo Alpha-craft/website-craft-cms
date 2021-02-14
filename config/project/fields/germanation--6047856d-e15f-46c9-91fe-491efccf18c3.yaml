@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 73e40fc9-1289-45d9-9c05-551d9f9fafed
+handle: germanation
+instructions: 'Time from sowing until...  Germanation (weeks)'
+name: Germanation
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: weeks
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

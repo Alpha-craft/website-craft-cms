@@ -1,0 +1,122 @@
+contentColumnType: string
+fieldGroup: 1e4c6c2e-7d8e-4484-8eae-392bda9127b0
+handle: soilChemistry
+instructions: 'Soil Chemistry  (pH)'
+name: 'Soil Chemistry '
+searchable: false
+settings:
+  multi: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 4.5+
+        -
+          - value
+          - '45'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '4.5'
+        -
+          - value
+          - '46'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '5.0'
+        -
+          - value
+          - '50'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '5.5'
+        -
+          - value
+          - '55'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '6.0'
+        -
+          - value
+          - '60'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '6.5'
+        -
+          - value
+          - '65'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '7.0'
+        -
+          - value
+          - '70'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '7.5'
+        -
+          - value
+          - '75'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '8.0'
+        -
+          - value
+          - '80'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 8.0+
+        -
+          - value
+          - '81'
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Checkboxes

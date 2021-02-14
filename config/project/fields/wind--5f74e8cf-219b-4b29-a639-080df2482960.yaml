@@ -1,0 +1,67 @@
+contentColumnType: string
+fieldGroup: 1e4c6c2e-7d8e-4484-8eae-392bda9127b0
+handle: wind
+instructions: 'Prefers / Can Tolerate Wind '
+name: 'Wind '
+searchable: false
+settings:
+  multi: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Very Windy / Exposed'
+        -
+          - value
+          - veryWindyExposed
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Light Winds / Exposed'
+        -
+          - value
+          - lightWindsExposed
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Light Winds / Some Shelter '
+        -
+          - value
+          - lightWindsSomeShelter
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Light Winds / Very Sheltered'
+        -
+          - value
+          - lightWindsVerySheltered
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Little / No Wind'
+        -
+          - value
+          - littleNoWind
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Checkboxes

@@ -1,20 +1,33 @@
 {% extends "_layouts/layout.twig" %}
 
 {% block content %}
-<div class="container mx-auto">
-  {% set query = craft.entries()
-    .section('plants')
-    .limit(3) %}
+<div class="bg-gray-200 h-screen">
+  <div class="container mx-auto">
+    {% set query = craft.entries()
+      .section('plants')
+      .limit(3) %}
 
-    {% paginate query as pageInfo, pageEntries %}
+      {% paginate query as pageInfo, pageEntries %}
+      <div class="md:flex md:space-x-12 place-content-center">
+        {% for entry in pageEntries %}
+          {% embed "_includes/card-list.twig" %}
+            {% block list %}
+              <a href="{{entry.url}}">
+                <div class="w-auto h-auto">
+                  <div class="text-center md:text-left bg-blue-500 rounded-sm my-3 text-2xl px-2" > {{entry.title}} </div>
+                  <img src="{{entry.image.one().url}}" alt="" style="height: 150px; width: 300px;" class="m-auto">
+                </div>
+              </a>
+            {% endblock %}
+          {% endembed  %}
+        {% endfor %}
+    </div>
 
-    {% for entry in pageEntries %}
-      <h1>{{ entry.title }}</h1>
-      <img src="{{entry.image.one().url}}" alt="">  
-    {% endfor %}
-
-  {% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">Previous Page</a>{% endif %}
-  {% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">Next Page</a>{% endif %}
+    <div class="flex text-center md:space-x-6 my-10">
+      {% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}" class="flex-1 bg-blue-500 rounded"><div>Previous Page</div></a> {% endif %}
+      {% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}" class="flex-1 bg-blue-500 rounded"><div>Next Page</div></a>{% endif %} 
+    </div>
+  </div>
 </div>
 
 {# <div class="container mx-auto">

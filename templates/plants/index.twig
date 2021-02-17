@@ -1,29 +1,43 @@
 {% extends "_layouts/layout.twig" %}
 
 {% block content %}
-<div class="bg-gray-200 h-screen">
+{% set searchQuery = craft.app.request.getQueryParam('search') %}
+
+<div class="bg-gray-200 lg:h-screen">
   <div class="container mx-auto">
     {% set query = craft.entries()
       .section('plants')
-      .limit(3) %}
+      .search(searchQuery)
+      .limit(3) 
+    %}
 
       {% paginate query as pageInfo, pageEntries %}
-      <div class="md:flex md:space-x-12 place-content-center">
-        {% for entry in pageEntries %}
-          {% embed "_includes/card-list.twig" %}
-            {% block list %}
-              <a href="{{entry.url}}">
-                <div class="w-auto h-auto">
-                  <div class="text-center md:text-left bg-blue-500 rounded-sm my-3 text-2xl px-2" > {{entry.title}} </div>
-                  <img src="{{entry.image.one().url}}" alt="" style="height: 150px; width: 300px;" class="m-auto">
-                </div>
-              </a>
-            {% endblock %}
-          {% endembed  %}
-        {% endfor %}
-    </div>
+      <div class=" bg-blue-200 rounded py-28">
+        <div class="md:flex md:space-x-12 md:space-y-0 space-y-5 place-content-center">
+          {% if query|length %}
+            {% for entry in pageEntries %}
+              {% embed "_includes/card-list.twig" %}
+                {% block list %}
+                  <a href="{{entry.url}}">
+                    <div class="w-auto h-auto">
+                      <div class="text-center md:text-left bg-blue-500 rounded-sm text-2xl px-2" > {{entry.title}} </div>
+                      <img src="{{entry.image.one().url}}" alt="" style="height: 150px; width: 300px;" class="m-auto">
+                    </div>
+                  </a>
+                {% endblock %}
+              {% endembed  %}
+            {% endfor %}
+          </div>
+        </div>
+        <p class="">jumlah yang ditemukan untuk hasil "{{searchQuery}}" : {{query|length}} </p>
+        {% else %}
+          <div>
+            <p>Maaf,Tidak Ditemukan hasil untuk "{{searchQuery}}"</p>
+            <div class="bg-red-500 text-white hover:text-red-500 hover:bg-white cursor-pointer m-auto w-5/6 h-4/5 border-red-500 border-2 px-16 py-11 rounded-md" onclick="kembali()"> <p class="text-center">Go Back</p> </div>
+          </div>
+          {% endif %}
 
-    <div class="flex text-center md:space-x-6 my-10">
+    <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 text-center md:space-x-6 my-10">
       {% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}" class="flex-1 bg-blue-500 rounded"><div>Previous Page</div></a> {% endif %}
       {% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}" class="flex-1 bg-blue-500 rounded"><div>Next Page</div></a>{% endif %} 
     </div>

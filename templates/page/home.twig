@@ -1,6 +1,12 @@
 {% extends "_layouts/layout.twig" %}
 
 {% block content %}
-<div class="h-screen"></div>
+{% set searchQuery = craft.app.request.getQueryParam('search') %}
+<div class="h-screen">
+  {# <form action=" {{url('plants')}}">
+    <input type="text" name="search" id="" value="{{searchQuery}}">
+    <button type="submit">Search</button>
+  </form> #}
+</div>
   
 {% endblock %}

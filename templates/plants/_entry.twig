@@ -12,14 +12,16 @@
         {% block contentPost %}
           <img src="{{ entry.image.one().url }}" alt="">
 
-          <div class="flex flex-col" >
+          <div class="grid gap-5 mb-5" >
 
-            {% embed "_includes/card-content.twig" with { 'group' : 'Description' } %}
-              {% block card %}
-                {{ entry.description }}    
-              {% endblock %}
-            {% endembed  %}
-
+            <div class="col-span-2">
+              {% embed "_includes/card-content.twig" with { 'group' : 'Description' } %}
+                {% block card %}
+                 <span class="mx-2"></span> {{ entry.description }}    
+                {% endblock %}
+              {% endembed  %}
+            </div>
+            
             {% embed "_includes/card-content.twig" with {'group' : "Common Name"} %}
               {% block card %}
                 <p class="">Name:{{ entry.commonName }}</p>

@@ -9,13 +9,20 @@
 </head>
 
 <body>
-    {% include "_includes/navbar.twig" %}
-    {% block content %} 
-    
-    {% endblock %}
-
-
+	<div class="relative">
+		{% include "_includes/navbar.twig" %}
+      {% block content %}     
+			
+      {% endblock %}
     {% include "_includes/footer.twig" %}
+	</div>
+
+
+    <script>
+			function kembali(){
+				window.history.back();
+			}
+		</script>
 </body>
 
 </html>

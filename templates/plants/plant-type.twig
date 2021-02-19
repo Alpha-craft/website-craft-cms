@@ -1,0 +1,27 @@
+{% extends "_layouts/layout.twig" %}
+
+
+{% block content %}
+
+{% set catMoisture = craft.categories.group('moisture').all() %}
+{% set catSoilType = craft.categories.group('soilType').all() %}
+<div class="bg-gray-200">
+  <div class="container mx-auto">
+    <div class="py-12">
+      <div class="grid grid-cols-2 gap-5">
+        {% for item in catMoisture %}      
+          <a href="{{item.url}}">
+            <div class="shadow-inner hover:shadow-md p-14 text-center">{{item}}</div>
+          </a>
+        {% endfor %}
+        {% for item in catSoilType %}
+          <a href="{{item.url}}">
+            <div class="shadow-inner hover:shadow-md p-14 text-center">{{item}}</div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -4,14 +4,35 @@
 {% set moisture = entry.moisture %}
 {% set chemistry = entry.soilChemistry %}
 {% set soilType = entry.soilType %}
+{% set moistureCategory = entry.moistureCategory %}
+{% set soilCategory = entry.soilCategory %}
 
 {% block content %}
   <div class="bg-green-200">
     <div class=" container mx-auto" >
       {% embed "_includes/content-layout.twig" with { 'contentTitle' : entry.title } %}
-        {% block contentPost %}
-          <img src="{{ entry.image.one().url }}" alt="">
 
+        {% block contentPost %}
+
+        <div class="flex flex-row">
+          <img class=" flex-none" src="{{ entry.image.one().url }}" alt="">
+          <div class="flex-auto m-3">
+            {% embed "_includes/card-content.twig" with {'group' : 'Category'} %}
+
+              {% block card %}
+
+                {% for item in moistureCategory %}
+                  <a class="transition duration-300 ease-linear px-2 rounded hover:bg-gray-50" href="{{item.url}}">{{item}}</a>
+                {% endfor %}
+                {% for item in soilCategory %}
+                  <a class="transition duration-300 ease-linear px-2 rounded hover:bg-gray-50" href="{{item.url}}">{{item}}</a>
+                {% endfor %}
+
+              {% endblock %}
+
+            {% endembed  %}
+          </div>
+        </div>
           <div class="grid gap-5 mb-5" >
 
             <div class="col-span-2">
@@ -22,17 +43,19 @@
               {% endembed  %}
             </div>
             
-            {% embed "_includes/card-content.twig" with {'group' : "Common Name"} %}
-              {% block card %}
-                <p class="">Name:{{ entry.commonName }}</p>
-                <p class="">Family:{{ entry.family }}</p>
-                <p class="">Genus:{{ entry.genus }}</p>
-                {% if entry.variety|length %}
-                  <p class="">Variety:{{entry.variety}}</p>
-                {% endif %}
-                <p class="">Species:{{entry.species}}</p>
-              {% endblock  %}
-            {% endembed  %}
+            <div class="col-span-2">
+              {% embed "_includes/card-content.twig" with {'group' : "Common Name"} %}
+                {% block card %}
+                  <p class="">Name:{{ entry.commonName }}</p>
+                  <p class="">Family:{{ entry.family }}</p>
+                  <p class="">Genus:{{ entry.genus }}</p>
+                  {% if entry.variety|length %}
+                    <p class="">Variety:{{entry.variety}}</p>
+                  {% endif %}
+                  <p class="">Species:{{entry.species}}</p>
+                {% endblock  %}
+              {% endembed  %}
+            </div>
 
             {% embed "_includes/card-content.twig" with { 'group' : "Cultivation" } %}
               {% block card %}
@@ -69,6 +92,17 @@
               {% endblock %}
             {% endembed  %}
             
+            
+            {% embed "_includes/card-content.twig" with { 'group' : 'Soil Type ' } %}
+            {% block card %}
+            <ul>
+              {% for item in soilType %}
+              <li> {{ item.label }} </li>
+              {% endfor %}
+            </ul>    
+            {% endblock %}
+            {% endembed  %}
+            
             {% embed "_includes/card-content.twig" with { 'group' : 'Soil Chemistry pH ' } %}
               {% block card %}
                 <ul>
@@ -78,17 +112,6 @@
                 </ul>    
               {% endblock  %}
             {% endembed  %}
-            
-            {% embed "_includes/card-content.twig" with { 'group' : 'Soil Type ' } %}
-              {% block card %}
-                <ul>
-                  {% for item in soilType %}
-                    <li> {{ item.label }} </li>
-                  {% endfor %}
-                </ul>    
-              {% endblock %}
-            {% endembed  %}
-
           </div>
         {% endblock %}
       {% endembed  %}

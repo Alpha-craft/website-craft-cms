@@ -1,4 +1,4 @@
-dateModified: 1613367452
+dateModified: 1613730459
 email:
   fromEmail: ainurahman03@gmail.com
   fromName: Alpha-craft
@@ -12,6 +12,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.3.0
+  seeder:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   super-table:
     edition: standard
     enabled: true
@@ -20,7 +24,7 @@ system:
   edition: solo
   live: true
   name: Alpha-craft
-  schemaVersion: 3.6.1
+  schemaVersion: 3.6.4
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false

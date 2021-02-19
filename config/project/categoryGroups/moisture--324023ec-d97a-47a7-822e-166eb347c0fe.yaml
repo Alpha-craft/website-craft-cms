@@ -1,0 +1,40 @@
+fieldLayouts:
+  3616f4ba-dfb6-4103-86da-f3bdb1157680:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: moisture
+name: Moisture
+siteSettings:
+  e2bac105-6801-4eaf-a11a-5e0c82a9273c:
+    hasUrls: true
+    template: plants/plant-type
+    uriFormat: 'plants?moisture={slug}'
+structure:
+  maxLevels: null
+  uid: 93fd25c6-4fac-4347-add8-64938fc34fca

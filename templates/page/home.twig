@@ -1,12 +1,17 @@
 {% extends "_layouts/layout.twig" %}
 
 {% block content %}
-{% set searchQuery = craft.app.request.getQueryParam('search') %}
+{% set rawCategory = craft.categories()
+  .group('plantType') %}
+{% set category = rawCategory.all() %}
 <div class="h-screen">
-  {# <form action=" {{url('plants')}}">
-    <input type="text" name="search" id="" value="{{searchQuery}}">
-    <button type="submit">Search</button>
-  </form> #}
+  {% embed "_includes/card-content.twig" with { 'group' : 'category' } %}
+    {% block content %}
+      {% for item in category %}
+        <a href="{{item.url}}">{{item.title}}</a>
+      {% endfor %}
+    {% endblock %}
+  {% endembed  %}
 </div>
   
 {% endblock %}

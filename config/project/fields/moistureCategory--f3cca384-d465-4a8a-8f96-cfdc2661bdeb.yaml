@@ -1,0 +1,23 @@
+contentColumnType: string
+fieldGroup: 9ca96b7a-a888-471e-ac59-3e9f1cfc522e
+handle: moistureCategory
+instructions: ''
+name: MoistureCategory
+searchable: false
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
+  branchLimit: ''
+  limit: null
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: true
+  source: 'group:324023ec-d97a-47a7-822e-166eb347c0fe'
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

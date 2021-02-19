@@ -1,5 +1,5 @@
 fieldLayouts:
-  3616f4ba-dfb6-4103-86da-f3bdb1157680:
+  fc0985f4-2152-4faa-9775-9e1822d0cf51:
     tabs:
       -
         elements:
@@ -28,13 +28,13 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-handle: plantType
-name: 'Plant type'
+handle: soilType
+name: 'soil type'
 siteSettings:
   e2bac105-6801-4eaf-a11a-5e0c82a9273c:
     hasUrls: true
-    template: plants/_entry
-    uriFormat: 'plants?plant-type{slug}'
+    template: plants/plant-type
+    uriFormat: 'plants?soil-type={slug}'
 structure:
   maxLevels: null
-  uid: 93fd25c6-4fac-4347-add8-64938fc34fca
+  uid: 57227b05-263c-4087-ae86-d42231d1085a

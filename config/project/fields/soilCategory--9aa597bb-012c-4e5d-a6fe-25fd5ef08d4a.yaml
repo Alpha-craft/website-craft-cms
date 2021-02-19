@@ -1,0 +1,23 @@
+contentColumnType: string
+fieldGroup: 9ca96b7a-a888-471e-ac59-3e9f1cfc522e
+handle: soilCategory
+instructions: ''
+name: soilCategory
+searchable: false
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
+  branchLimit: ''
+  limit: null
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: true
+  source: 'group:d2bbda13-509b-4ef4-948d-fdcbdef798f9'
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

@@ -1,0 +1,70 @@
+field: c1cc181b-5cb9-4d6a-9331-d0892d7a8d26
+fieldLayouts:
+  28b382d8-3056-48cb-bfab-b047471821c0:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: de5b0ec3-f310-4c11-b285-ff063d02deeb
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2eb9fc67-1071-4201-b151-3f59ef55ae63
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  2eb9fc67-1071-4201-b151-3f59ef55ae63:
+    contentColumnType: string
+    fieldGroup: null
+    handle: contentPost
+    instructions: ''
+    name: 'Content Post'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: ''
+      localizeRelations: false
+      selectionLabel: Entries
+      showSiteMenu: true
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  de5b0ec3-f310-4c11-b285-ff063d02deeb:
+    contentColumnType: text
+    fieldGroup: null
+    handle: header
+    instructions: ''
+    name: Header
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: featured
+name: Featured
+sortOrder: 1

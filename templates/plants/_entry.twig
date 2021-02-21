@@ -21,11 +21,11 @@
 
               {% block card %}
 
-                {% for item in moistureCategory %}
-                  <a class="transition duration-300 ease-linear px-2 rounded hover:bg-gray-50" href="{{item.url}}">{{item}}</a>
+                {% for item in moistureCategory.all() %}
+                  <a class="transition duration-300 ease-linear px-2 rounded hover:bg-green-500 hover:text-white" href="{{item.url}}">{{item}}</a>
                 {% endfor %}
-                {% for item in soilCategory %}
-                  <a class="transition duration-300 ease-linear px-2 rounded hover:bg-gray-50" href="{{item.url}}">{{item}}</a>
+                {% for item in soilCategory.all() %}
+                  <a class="transition duration-300 ease-linear px-2 rounded hover:bg-green-500 hover:text-white" href="{{item.url}}">{{item}}</a>
                 {% endfor %}
 
               {% endblock %}

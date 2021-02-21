@@ -1,9 +1,13 @@
-dateModified: 1613730459
+dateModified: 1613926733
 email:
   fromEmail: ainurahman03@gmail.com
   fromName: Alpha-craft
   transportType: craft\mail\transportadapters\Sendmail
 plugins:
+  disqus:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   dumper:
     edition: standard
     enabled: true

@@ -4,14 +4,45 @@
 {% set rawCategory = craft.categories()
   .group('plantType') %}
 {% set category = rawCategory.all() %}
+
+{# eager load featuredContent #}
+{% set queryEntry = craft.entries()
+  .section('home')
+  .with('featuredContent')
+  .all()
+%}
 <div class="h-screen">
-  {% embed "_includes/card-content.twig" with { 'group' : 'category' } %}
-    {% block content %}
-      {% for item in category %}
-        <a href="{{item.url}}">{{item.title}}</a>
+  <div class="container mx-auto">
+    <div class="bg-gray-200 my-12 rounded-md p-3">
+      {% for blockk in queryEntry[0].featuredContent %}
+        {% if blockk.type == "paragraph" %}
+        <h1 class="capitalize">{{blockk.paragraph}}</h1>
+        {% endif %}
       {% endfor %}
-    {% endblock %}
-  {% endembed  %}
-</div>
-  
+    </div>
+
+    <div class="bg-green-300 my-12">
+      <h1 class="text-3xl text-center m-auto border-b-2 border-black w-3/4 py-3">Featured Post</h1>
+      <div class="flex flex-col md:flex-row space-x-0 md:space-x-16  p-7 place-content-center">
+        {% for featured in queryEntry[0].featuredContent %}
+          {# mengambil data dari field featuredContent #}
+          {% set post = featured.contentPost %}
+          {# mengambil data dari field dalam matrix #}
+          {% set header = featured.header %}
+          {% for item in post %}
+            {% set image = item.image.one() %}
+            <a href="{{item.url}}">
+              {% include "_includes/featured-content.twig" with {
+                'title' : header,
+                'bgHeader' : 'bg-green-400',
+                'image' : image,
+                'bgColor' : 'bg-green-300'
+              } %}  
+            </a>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>  
 {% endblock %}

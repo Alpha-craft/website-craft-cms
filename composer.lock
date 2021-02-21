@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e40c0e1a38fefcec2c4179683c743830",
+    "content-hash": "46c2340a2bb2310a22315a5e18f226ba",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -434,11 +434,11 @@
         },
         {
             "name": "craftcms/plugin-installer",
-            "version": "1.5.6",
+            "version": "1.5.7",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/plugin-installer/zipball/4d24e227a086db3d8784a705f59060c49cf989ad",
-                "reference": "4d24e227a086db3d8784a705f59060c49cf989ad",
+                "url": "https://api.github.com/repos/craftcms/plugin-installer/zipball/23ec472acd4410b70b07d5a02b2b82db9ee3f66b",
+                "reference": "23ec472acd4410b70b07d5a02b2b82db9ee3f66b",
                 "shasum": ""
             },
             "require": {
@@ -466,7 +466,7 @@
                 "installer",
                 "plugin"
             ],
-            "time": "2020-10-26T23:34:21+00:00"
+            "time": "2021-02-18T02:01:38+00:00"
         },
         {
             "name": "craftcms/redactor",
@@ -1485,6 +1485,59 @@
                 "shell"
             ],
             "time": "2020-11-23T17:31:15+00:00"
+        },
+        {
+            "name": "nystudio107/craft-disqus",
+            "version": "1.1.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nystudio107/craft-disqus/zipball/838ae075cf66eb101810cf992959fd5b033dccf9",
+                "reference": "838ae075cf66eb101810cf992959fd5b033dccf9",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Disqus",
+                "handle": "disqus",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": true,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft-disqus/v1/CHANGELOG.md",
+                "components": {
+                    "disqusService": "nystudio107\\disqus\\services\\DisqusService"
+                },
+                "class": "nystudio107\\disqus\\Disqus"
+            },
+            "autoload": {
+                "psr-4": {
+                    "nystudio107\\disqus\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "nystudio107",
+                    "homepage": "https://nystudio107.com"
+                }
+            ],
+            "description": "Integrates the Disqus commenting system into Craft 3 websites, including Single Sign On (SSO) and custom login/logout URLs",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "disqus"
+            ],
+            "support": {
+                "docs": "https://github.com/nystudio107/craft-disqus/blob/v1/README.md",
+                "issues": "https://github.com/nystudio107/craft-disqus/issues"
+            },
+            "time": "2019-08-15T14:52:21+00:00"
         },
         {
             "name": "opis/closure",

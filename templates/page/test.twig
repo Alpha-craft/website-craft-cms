@@ -1,0 +1,23 @@
+{% extends "_layouts/layout.twig" %}
+{% block content %}
+{# <div class="h-screen" x-data="{
+  test : 'hemlo',
+  count : 0,
+  neg:100
+}">
+<input type="text" name="" id="" x-model="test">
+  <div x-text="test" ></div>
+  <div x-text="count" ></div>
+  <button @click="count++">Plus</button>
+  <button @click="count--">Minus</button>
+</div> #}
+
+<div x-data="{tab:'home'}" class="flex space-x-3">
+  <div :class="{'active' : tab}" @click="tab = 'home'">home</div>
+  <div :class="{'active' : tab}" @click="tab = 'info'">info</div>
+  <div class="flex-none bg-green-300">
+    <div x-show="tab === 'home'">Home</div>
+    <div x-show="tab === 'info'">info</div>
+  </div>
+</div>
+{% endblock %}

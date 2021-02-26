@@ -1,4 +1,4 @@
-dateModified: 1613926733
+dateModified: 1614237327
 email:
   fromEmail: ainurahman03@gmail.com
   fromName: Alpha-craft
@@ -8,6 +8,19 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+    settings:
+      customLogin: false
+      disqusPublicKey: ''
+      disqusSecretKey: ''
+      disqusShortname: alpha-craft-1
+      loginButton: ''
+      loginHeight: 400
+      loginIcon: ''
+      loginLogoutUrl: ''
+      loginName: ''
+      loginUrl: ''
+      loginWidth: 800
+      useSSO: false
   dumper:
     edition: standard
     enabled: true

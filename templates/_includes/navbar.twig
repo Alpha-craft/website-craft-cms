@@ -2,9 +2,10 @@
 {% set navbar = [
   {'page' : 'Home', 'url' : '' ~ home},
   {'page' : 'Plant', 'url' : home ~ 'plants'},
-  {'page' : 'About', 'url' : home ~ 'page/about'},
+  
   {'page': 'Plant Type', 'url' : home ~ 'plants/plant-type'}
 ] %}
+{# {'page' : 'About', 'url' : home ~ 'page/about'}, #}
 {% set searchQuery = craft.app.request.getQueryParam('search') %}
 
 <div class="bg-green-400 font-sans h-auto sticky top-0 shadow-md md:text-2xl p-2">
@@ -13,17 +14,20 @@
         Planty
       </li>
       <li class="flex-auto">
-        <form action=" {{url('plants')}}">
-          <input type="text" name="search" id="" class="rounded-sm bg-gray-100 shadow-inner text-gray-600 text-lg" value="{{searchQuery}}">
-          <button class="transition duration-300 ease-in shadow-inner bg-green-500 rounded-md p-1 text-xl hover:text-gray-50" type="submit">Search</button>
-        </form>
+
       </li>
       {% for nav in navbar %}
-      	<li class="flex-none list-none">
+        <li class="flex-auto md:flex-none list-none">
           <a href="{{nav.url}}" class="px-4 transition duration-500 ease-out cursor-pointer text-center md:text-xl  hover:text-gray-100 py-2">
             {{nav.page}}
           </a>
-        </li>
+         </li>
       {% endfor %}
     </ul>
+    <div class="grid justify-items-stretch">
+      <form class="justify-self-center" action=" {{url('plants')}}">
+        <input type="text" name="search" id="" class="rounded-sm bg-gray-100 shadow-inner text-gray-600 text-lg" value="{{searchQuery}}">
+        <button class="transition duration-300 ease-in shadow-inner bg-green-500 rounded-md p-1 text-xl hover:text-gray-50" type="submit">Search</button>
+      </form>
+    </div>
 </div>

@@ -27,7 +27,7 @@
 %}
 
 <div class="bg-gray-200">
-  <div class="container mx-auto">
+  <div class="container mx-auto h-auto md:h-screen">
       {% paginate query as pageInfo, pageEntries %}
       <div class=" bg-blue-200 rounded py-28">
         <div class="md:flex md:space-x-12 md:space-y-0 space-y-5 place-content-center">
@@ -37,9 +37,9 @@
               {% if image %}
                 {% embed "_includes/card-list.twig" %}
                   {% block list %}
-                    <a href="{{entry.url}}">
+                    <a class="group" href="{{entry.url}}">
                       <div class="">
-                        <div class="text-center md:text-left bg-blue-500 rounded-sm text-2xl px-2" > {{entry.title}} </div>
+                        <div class="transform text-center md:text-left bg-blue-500 rounded-sm text-2xl px-2 hover:scale-125" > {{entry.title}} </div>
                         <img src="{{image.url}}" alt="" style="height: 150px; width: 300px;" class="m-auto">
                       </div>
                     </a>
@@ -55,7 +55,7 @@
         {% endif %}
 
         {% if searchQuery|length %}
-          <p class="">data found with keyowrd "{{searchQuery}}" : {{query|length}} </p> 
+          <p class="">data found with Keyword "{{searchQuery}}" : {{query|length}} </p> 
         {% endif %}
 
         {% else %}

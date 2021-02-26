@@ -1,11 +1,11 @@
 field: c1cc181b-5cb9-4d6a-9331-d0892d7a8d26
 fieldLayouts:
-  28b382d8-3056-48cb-bfab-b047471821c0:
+  c68595fa-c343-4205-ac3b-f2ec8064a68b:
     tabs:
       -
         elements:
           -
-            fieldUid: de5b0ec3-f310-4c11-b285-ff063d02deeb
+            fieldUid: 9f78dd2a-9c45-46aa-89e6-867fa9d8cf38
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 2eb9fc67-1071-4201-b151-3f59ef55ae63
+            fieldUid: 4c932ab7-eae0-4d25-bb1a-c0c848964528
             instructions: null
             label: null
             required: false
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 8fcd1d41-7853-4d8b-a5f6-122506cf303a
+            fieldUid: 0d1e87cb-eacf-4e00-90a6-4dd9f6a666f9
             instructions: null
             label: null
             required: false
@@ -34,33 +34,12 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  2eb9fc67-1071-4201-b151-3f59ef55ae63:
-    contentColumnType: string
-    fieldGroup: null
-    handle: contentPost
-    instructions: ''
-    name: 'Content Post'
-    searchable: false
-    settings:
-      allowSelfRelations: false
-      limit: ''
-      localizeRelations: false
-      selectionLabel: Entries
-      showSiteMenu: true
-      source: null
-      sources: '*'
-      targetSiteId: null
-      validateRelatedElements: false
-      viewMode: null
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Entries
-  8fcd1d41-7853-4d8b-a5f6-122506cf303a:
+  0d1e87cb-eacf-4e00-90a6-4dd9f6a666f9:
     contentColumnType: text
     fieldGroup: null
-    handle: tailwindclass
+    handle: tailwindClass
     instructions: ''
-    name: TailwindClass
+    name: 'Tailwind Class'
     searchable: false
     settings:
       byteLimit: null
@@ -74,12 +53,32 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  de5b0ec3-f310-4c11-b285-ff063d02deeb:
+  4c932ab7-eae0-4d25-bb1a-c0c848964528:
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: numbeOfPost
+    instructions: ''
+    name: 'Numbe Of Post'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: '0'
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  9f78dd2a-9c45-46aa-89e6-867fa9d8cf38:
     contentColumnType: text
     fieldGroup: null
-    handle: header
+    handle: head
     instructions: ''
-    name: Header
+    name: Title
     searchable: false
     settings:
       byteLimit: null
@@ -93,6 +92,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-handle: featured
-name: Featured
-sortOrder: 1
+handle: recentPost
+name: 'Recent Post'
+sortOrder: 3

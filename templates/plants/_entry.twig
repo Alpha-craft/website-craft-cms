@@ -36,11 +36,16 @@
           <div class="grid gap-5 mb-5" >
 
             <div class="col-span-2">
-              {% embed "_includes/card-content.twig" with { 'group' : 'Description' } %}
+              {% set description = entry.description %}
+              {% include "_includes/card-content.twig" with {
+                group:"Description",
+                others: description
+              } %}
+              {# {% embed "_includes/card-content.twig" with { 'group' : 'Description' } %}
                 {% block card %}
                  <span class="mx-2"></span> {{ entry.description }}    
                 {% endblock %}
-              {% endembed  %}
+              {% endembed  %} #}
             </div>
             
             <div class="col-span-2">
@@ -49,7 +54,7 @@
                   <p class="">Name:{{ entry.commonName }}</p>
                   <p class="">Family:{{ entry.family }}</p>
                   <p class="">Genus:{{ entry.genus }}</p>
-                  {% if entry.variety|length %}
+                  {% if entry.variety is not empty %}
                     <p class="">Variety:{{entry.variety}}</p>
                   {% endif %}
                   <p class="">Species:{{entry.species}}</p>
@@ -57,65 +62,50 @@
               {% endembed  %}
             </div>
 
-            {% embed "_includes/card-content.twig" with { 'group' : "Cultivation" } %}
-              {% block card %}
-                <p>Germanation:{{ entry.germanation }} weeks </p>
-                <p>Bloom/harvest:{{ entry.harvest }} months </p>    
-                <p>Sowing Depth:{{ entry.sowingDepth }} inch </p>    
-              {% endblock  %}
-            {% endembed  %}
+            {% include "_includes/card-content.twig" with { 
+              group : "Cultivation",
+              items: [
+                { label: "Germanation: "~entry.germanation~" weeks" },
+                { label: "Bloom/harvest: #{entry.harvest} months" },
+                { label: entry.variety is empty ? null : "Variety : #{entry.variety}" }
+              ]
+            } %}
 
-            {% embed "_includes/card-content.twig" with { 'group' : "Temperature " } %}
-              {% block card %}
-                <p> Temperature Low: {{ entry.temperatureLow }}&#8451;  </p>
-                <p> temperature High: {{ entry.temperatureHigh }}&#8451; </p>
-              {% endblock %}
-            {% endembed %}
+            {% include "_includes/card-content.twig" with {
+              group : "Temperature",
+              items:[
+                { label : "Temperature Low: #{entry.temperatureLow}&#8451;" },
+                { label: "Temperature High: #{entry.temperatureHigh}&#8451;" }
+              ]
+            } %}
             
-            {% embed "_includes/card-content.twig" with { 'group' : 'Light' } %}
-              {% block card %}
-                <ul>
-                  {% for item in light %}
-                    <li> {{ item.label }} </li>
-                  {% endfor %}
-                </ul>
-              {% endblock %}
-            {% endembed  %}
+            {% include "_includes/card-content.twig" with {
+              group : "Ligth",
+              items: light
+              } %}
 
-            {% embed "_includes/card-content.twig" with {'group' : 'Moisture' } %}
-              {% block card %}
-                <ul>
-                  {% for item in moisture %}
-                    <li> {{ item.label }} </li>
-                  {% endfor %}
-                </ul>    
-              {% endblock %}
-            {% endembed  %}
+            {% include "_includes/card-content.twig" with {
+              group: 'Moisture',
+              items: moisture 
+            } %}
             
             
-            {% embed "_includes/card-content.twig" with { 'group' : 'Soil Type ' } %}
-            {% block card %}
-            <ul>
-              {% for item in soilType %}
-              <li> {{ item.label }} </li>
-              {% endfor %}
-            </ul>    
-            {% endblock %}
-            {% endembed  %}
+            {% include "_includes/card-content.twig" with { 
+              group : 'Soil Type ',
+              items: soilType,
+            } %}
             
-            {% embed "_includes/card-content.twig" with { 'group' : 'Soil Chemistry pH ' } %}
-              {% block card %}
-                <ul>
-                  {% for item in chemistry %}
-                    <li> {{ item.label }} </li>
-                  {% endfor %}
-                </ul>    
-              {% endblock  %}
-            {% endembed  %}
+            {% include "_includes/card-content.twig" with {
+              group: "Soil Chemistry (pH)",
+              items: chemistry
+            } %}
           </div>
         {% endblock %}
       {% endembed  %}
     </div>
   </div>
-  {% include "_includes/disqus.twig" %}
+  {# {% include "_includes/disqus.twig" %} #}
+  <div class=" m-auto md:m-6">
+    {{ disqusEmbed(entry.slug, entry.title, entry.url) }}
+  </div>
 {% endblock %}

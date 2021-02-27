@@ -6,45 +6,30 @@
 {% set category = rawCategory.all() %}
 
 {# eager load featuredContent #}
-{% set queryEntry = craft.entries()
-  .section('home')
-  .with('featuredContent')
-  .all()
-%}
-<div class="h-auto">
+<div class="h-auto md:h-screen">
   <div class="container mx-auto">
-    <div class="bg-gray-200 my-12 rounded-md p-3">
-      {% for blockk in queryEntry[0].featuredContent %}
-        
-      {% endfor %}
-    </div>
 
     <div class="bg-green-300 my-12">
-      <h1 class="text-3xl text-center m-auto border-b-2 border-black w-3/4 py-3">Featured Post</h1>
-      {% for featured in queryEntry[0].featuredContent %}
-      {# mengambil data dari field featuredContent #}
-      {% set post = featured.contentPost %}
-      {# mengambil data dari field dalam matrix #}
-      {% set header = featured.header %}
-        {% if featured.type == "paragraph" %}
-          <div class="bg-gray-200 rounded">
-            <h1 class="capitalize">{{featured.paragraph}}</h1>
+      {% for block in entry.featuredContent.all() %}
+        {% if block.type == "paragraph" %}
+          <div class="bg-gray-200 rounded p-7">
+            <h1 class="capitalize p-2">{{block.paragraph}}</h1>
           </div>
-        {% elseif featured.type == "featuredPost" %}
-          <div class="flex flex-col md:flex-row space-x-0 md:space-x-16  p-7 place-content-center"></div>
-            {% for item in post %}
-              {% set image = item.image.one() %}
-              <a href="{{item.url}}">
-              {% include "_includes/featured-content.twig" with {
-              'title' : header,
-              'bgHeader' : 'bg-green-400',
-              'image' : image,
-              'bgColor' : 'bg-green-300'
-              } %}  
-              </a>
-            {% endfor %}
+        {% elseif block.type == "featuredPost" %}
+          {# mengambil data dari field featuredContent #}
+          {% set post = block.contentPost %}
+          {# mengambil data dari field dalam matrix #}
+          {% set header = block.header %}
+          <div class="p-3">
+            <h1 class="text-3xl text-center m-auto border-b-2 border-black w-3/4 py-3"> {{block.header}} </h1>
+            {% include "_includes/featured-content.twig" with {
+            'title' : header,
+            'bgHeader' : block.bgHeader,
+            'borderColor' : block.borderColor,
+            'headerColor': block.headerColor,
+            'data' : post
+            } %}  
           </div>
-
         {% endif %}
       {% endfor %}
     </div>

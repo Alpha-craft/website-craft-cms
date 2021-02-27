@@ -31,9 +31,46 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: a264cf52-d6dd-4a7b-9d3e-eaf836035522
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 00605d0c-2c28-4f04-b30e-f95b33797b48
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
+  00605d0c-2c28-4f04-b30e-f95b33797b48:
+    contentColumnType: text
+    fieldGroup: null
+    handle: headerColor
+    instructions: ''
+    name: 'Header Color'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   2eb9fc67-1071-4201-b151-3f59ef55ae63:
     contentColumnType: string
     fieldGroup: null
@@ -58,9 +95,28 @@ fields:
   8fcd1d41-7853-4d8b-a5f6-122506cf303a:
     contentColumnType: text
     fieldGroup: null
-    handle: tailwindclass
+    handle: borderColor
     instructions: ''
-    name: TailwindClass
+    name: 'Border Color'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  a264cf52-d6dd-4a7b-9d3e-eaf836035522:
+    contentColumnType: text
+    fieldGroup: null
+    handle: bgHeader
+    instructions: ''
+    name: 'Bg Header'
     searchable: false
     settings:
       byteLimit: null

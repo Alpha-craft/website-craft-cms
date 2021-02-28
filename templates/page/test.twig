@@ -20,4 +20,29 @@
     <div x-show="tab === 'info'">info</div>
   </div>
 </div>
+
+<div x-data="{ opened: 1 }" class="flex flex-col p-4">
+  <div @click="opened == 1 ? opened = -1 : opened = 1" class="flex items-center justify-between bg-gray-200 border p-4">
+    <p>Apa Itu Planty</p>
+    <span :class="opened == 1 ? 'las la-arrow-down' : 'las la-arrow-up'" class="fas"></span>
+  </div>
+  <div x-show.transition.in.duration.800ms="opened == 1" class="border p-4">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam varius vel magna lacinia mollis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque ligula neque, imperdiet nec est laoreet, pulvinar commodo odio. Vivamus eget eleifend libero. Fusce dolor nibh, porta eu gravida ut, maximus non erat.
+  </div>
+  <div @click="opened == 2 ? opened = -1 : opened = 2" class="flex items-center justify-between bg-gray-200 border p-4">
+    <p>Container 2</p>
+    <span :class="opened == 2 ? 'las la-arrow-down' : 'las la-arrow-up'" class="fas"></span>
+  </div>
+    <div x-show.transition.in.duration.800ms="opened == 2" class="border p-4">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam varius vel magna lacinia mollis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque ligula neque, imperdiet nec est laoreet, pulvinar commodo odio. Vivamus eget eleifend libero. Fusce dolor nibh, porta eu gravida ut, maximus non erat.
+  </div>
+  <div @click="opened == 3 ? opened = -1 : opened = 3" class="flex items-center justify-between bg-gray-200 border p-4">
+    <p>Container 3</p>
+    <span :class="opened == 3 ? 'las la-arrow-up' : 'las la-arrow-up'" class="fas"></span>
+  </div>
+    <div x-show.transition.in.duration.800ms="opened == 3" class="border p-4">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam varius vel magna lacinia mollis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque ligula neque, imperdiet nec est laoreet, pulvinar commodo odio. Vivamus eget eleifend libero. Fusce dolor nibh, porta eu gravida ut, maximus non erat.
+  </div>
+  <a href="https://davidgrzyb.com/accordion-with-alpine-js-tailwind" class="mt-12 underline">How to build an accordion with Alpine.js</a>
+</div>
 {% endblock %}

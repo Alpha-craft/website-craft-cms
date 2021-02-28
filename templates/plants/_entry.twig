@@ -8,13 +8,13 @@
 {% set soilCategory = entry.soilCategory %}
 
 {% block content %}
-  <div class="bg-green-200">
+  <div class="bg-gray-100">
     <div class=" container mx-auto" >
       {% embed "_includes/content-layout.twig" with { 'contentTitle' : entry.title } %}
 
         {% block contentPost %}
 
-        <div class="flex flex-row">
+        <div class="flex flex-col md:flex-row">
           <img class=" flex-none" src="{{ entry.image.one().url }}" alt="">
           <div class="flex-auto m-3">
             {% embed "_includes/card-content.twig" with {'group' : 'Category'} %}
@@ -33,73 +33,79 @@
             {% endembed  %}
           </div>
         </div>
-          <div class="grid gap-5 mb-5" >
+        <div x-data="{tab: 'overview' }">
 
-            <div class="col-span-2">
-              {% set description = entry.description %}
-              {% include "_includes/card-content.twig" with {
-                group:"Description",
-                others: description
-              } %}
-              {# {% embed "_includes/card-content.twig" with { 'group' : 'Description' } %}
-                {% block card %}
-                 <span class="mx-2"></span> {{ entry.description }}    
-                {% endblock %}
-              {% endembed  %} #}
-            </div>
-            
-            <div class="col-span-2">
-              {% embed "_includes/card-content.twig" with {'group' : "Common Name"} %}
-                {% block card %}
-                  <p class="">Name:{{ entry.commonName }}</p>
-                  <p class="">Family:{{ entry.family }}</p>
-                  <p class="">Genus:{{ entry.genus }}</p>
-                  {% if entry.variety is not empty %}
-                    <p class="">Variety:{{entry.variety}}</p>
-                  {% endif %}
-                  <p class="">Species:{{entry.species}}</p>
-                {% endblock  %}
-              {% endembed  %}
-            </div>
-
-            {% include "_includes/card-content.twig" with { 
-              group : "Cultivation",
-              items: [
-                { label: "Germanation: "~entry.germanation~" weeks" },
-                { label: "Bloom/harvest: #{entry.harvest} months" },
-                { label: entry.variety is empty ? null : "Variety : #{entry.variety}" }
-              ]
-            } %}
-
-            {% include "_includes/card-content.twig" with {
-              group : "Temperature",
-              items:[
-                { label : "Temperature Low: #{entry.temperatureLow}&#8451;" },
-                { label: "Temperature High: #{entry.temperatureHigh}&#8451;" }
-              ]
-            } %}
-            
-            {% include "_includes/card-content.twig" with {
-              group : "Ligth",
-              items: light
-              } %}
-
-            {% include "_includes/card-content.twig" with {
-              group: 'Moisture',
-              items: moisture 
-            } %}
-            
-            
-            {% include "_includes/card-content.twig" with { 
-              group : 'Soil Type ',
-              items: soilType,
-            } %}
-            
-            {% include "_includes/card-content.twig" with {
-              group: "Soil Chemistry (pH)",
-              items: chemistry
-            } %}
+          <div class="flex space-x-2">
+            <button :class="{ 'active' : tab == 'overview' ,'border-b-2 border-blue-500':tab == 'overview' }" @click="tab = 'overview' " class="focus:outline-none text-xl">Overview</button>
+            <button :class="{ 'active' : tab == 'conditons' ,'border-b-2 border-blue-500':tab == 'conditions' }" @click="tab = 'conditions' "class="focus:outline-none text-xl">Conditions</button>
           </div>
+
+          <div class="" >
+            <div x-show.opacity.transition.in.duration.400ms.out.duration.150ms.opacity 	="tab === 'overview' " class="grid md:grid-cols-2 gap-5">
+              <div class="md:col-span-2">
+                {% set description = entry.description %}
+                {% include "_includes/card-content.twig" with {
+                  group:"Description",
+                  desc: description
+                  } %}
+              </div>
+                
+              <div class="">
+                {% include "_includes/card-content.twig" with {
+                  group : "Common Name",
+                  items:[
+                    {label: "Name: #{ entry.commonName }"},
+                    {label: "Family:#{ entry.family }"},
+                    {label: "Genus:#{ entry.genus }"},
+                    { label: entry.variety is empty ? null : "Variety : #{entry.variety}" }
+                  ]
+                } %}
+              </div>
+
+              {% include "_includes/card-content.twig" with { 
+                group : "Cultivation",
+                items: [
+                  { label: "Germanation: "~entry.germanation~" weeks" },
+                  { label: "Bloom/harvest: #{entry.harvest} months" },
+                  { label: entry.variety is empty ? null : "Variety : #{entry.variety}" }
+                  ]
+              } %}
+            </div>
+
+            <div x-show.transition.in.duration.300ms.out.duration.150ms ="tab === 'conditions' " class="grid md:grid-cols-2 gap-5">
+              {% include "_includes/card-content.twig" with {
+                group : "Temperature",
+                items:[
+                  { label : "Temperature Low: #{entry.temperatureLow}&#8451;" },
+                  { label: "Temperature High: #{entry.temperatureHigh}&#8451;" }
+                  ]
+              } %}
+                
+              {% include "_includes/card-content.twig" with {
+                group : "Light",
+                items: light
+                } %}
+                
+              {% include "_includes/card-content.twig" with {
+                group: 'Moisture',
+                items: moisture 
+              } %}
+                
+                
+              {% include "_includes/card-content.twig" with { 
+                group : 'Soil Type ',
+                items: soilType,
+              } %}
+
+              <div class="md:col-span-2">
+                {% include "_includes/card-content.twig" with {
+                  group: "Soil Chemistry (pH)",
+                  items: chemistry
+                } %}
+              </div>
+            </div>
+          </div>
+        </div>
         {% endblock %}
       {% endembed  %}
     </div>

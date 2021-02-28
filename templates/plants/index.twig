@@ -38,8 +38,8 @@
                 {% embed "_includes/card-list.twig" %}
                   {% block list %}
                     <a class="group" href="{{entry.url}}">
-                      <div class="">
-                        <div class="transform text-center md:text-left bg-blue-500 rounded-sm text-2xl px-2 hover:scale-125" > {{entry.title}} </div>
+                      <div class="transform duration-300 ease-out hover:scale-110">
+                        <div class="transform text-center md:text-left bg-blue-500 rounded-sm text-2xl px-2" > {{entry.title}} </div>
                         <img src="{{image.url}}" alt="" style="height: 150px; width: 300px;" class="m-auto">
                       </div>
                     </a>
@@ -68,6 +68,9 @@
     <div class="flex space-y-2 md:space-y-0 text-center md:space-x-6 py-10 place-content-center">
       {% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}" class="transition duration-200 outline-none text-gray-100 ease-linear bg-blue-500 rounded hover:bg-gray-200 hover:text-blue-500 border-2 border-blue-500 p-2"><div>Previous Page</div></a> {% endif %}
       {% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}" class="transition duration-200 outline-none text-gray-100 ease-linear bg-blue-500 rounded hover:bg-gray-200 hover:text-blue-500 border-2 border-blue-500 p-2"><div>Next Page</div></a>{% endif %} 
+    </div>
+    <div class="flex space-y-2 md:space-y-0 text-center md:space-x-6 place-content-center">
+      Page :{{pageInfo.currentPage}} From : {{pageInfo.totalPages}}
     </div>
   </div>
 </div>

@@ -1,9 +1,6 @@
 {% extends "_layouts/layout.twig" %}
 
 {% block content %}
-{% set rawCategory = craft.categories()
-  .group('plantType') %}
-{% set category = rawCategory.all() %}
 
 {# eager load featuredContent #}
 <div class="h-auto md:h-auto">
@@ -45,6 +42,17 @@
             'data' : data
             } %}  
           </div>
+        
+        {% elseif block.type == 'accordion' %}
+          {% include "_includes/accordion.twig" with {
+            firstTitle:block.firstTitle,
+            secondTitle:block.secondTitle,
+            thirdTitle:block.thirdTitle,
+            firstBar:block.firstBar,
+            secondBar:block.secondBar,
+            thirdBar:block.thirdBar
+          } %}
+
         {% endif %}
       {% endfor %}
     </div>

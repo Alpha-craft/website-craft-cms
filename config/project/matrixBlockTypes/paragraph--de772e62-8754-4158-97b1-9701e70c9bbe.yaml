@@ -5,6 +5,15 @@ fieldLayouts:
       -
         elements:
           -
+            fieldUid: 749c2058-45bf-4b7f-9e0d-fb21dde1cfc5
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             fieldUid: bd03c1ac-10d1-44cd-8323-c29bfd65d40f
             instructions: null
             label: null
@@ -22,15 +31,33 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: 6f8ceb56-8f15-47a6-8dd8-7933e86852ae
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 31c73734-11f2-415d-916f-4da4b321b1d0
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
   16edc061-e42c-449e-a2b1-039c4116d10d:
     contentColumnType: text
     fieldGroup: null
-    handle: tailwindClass
-    instructions: ''
-    name: 'Tailwind Class'
+    handle: bgHeader
+    instructions: 'Background untuk Header ditulis berupa tailwind Class'
+    name: 'Background Header'
     searchable: false
     settings:
       byteLimit: null
@@ -44,12 +71,69 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  31c73734-11f2-415d-916f-4da4b321b1d0:
+    contentColumnType: text
+    fieldGroup: null
+    handle: bodyColor
+    instructions: ''
+    name: 'Body Color'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: 'Tailwind Class'
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  6f8ceb56-8f15-47a6-8dd8-7933e86852ae:
+    contentColumnType: text
+    fieldGroup: null
+    handle: headerColor
+    instructions: ''
+    name: 'Header Color'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: 'Tailwind Class'
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  749c2058-45bf-4b7f-9e0d-fb21dde1cfc5:
+    contentColumnType: text
+    fieldGroup: null
+    handle: judul
+    instructions: 'untuk Judul'
+    name: Judul
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: Judul
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   bd03c1ac-10d1-44cd-8323-c29bfd65d40f:
     contentColumnType: text
     fieldGroup: null
-    handle: paragraph
+    handle: body
     instructions: ''
-    name: Paragraph
+    name: body
     searchable: false
     settings:
       availableTransforms: '*'

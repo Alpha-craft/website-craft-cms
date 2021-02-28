@@ -6,14 +6,15 @@
 {% set category = rawCategory.all() %}
 
 {# eager load featuredContent #}
-<div class="h-auto md:h-screen">
+<div class="h-auto md:h-auto">
   <div class="container mx-auto">
 
-    <div class="bg-green-300 my-12">
+    <div class="my-12">
       {% for block in entry.featuredContent.all() %}
         {% if block.type == "paragraph" %}
-          <div class="bg-gray-200 rounded p-7">
-            <h1 class="capitalize p-2">{{block.paragraph}}</h1>
+          <div class="{{block.bgHeader}} rounded p-7">
+            <div class="{{block.headerColor}} text-center text-lg md:text-3xl font-bold border-b-2 border-black w-3/4 m-auto">{{block.judul}}</div>
+            <h1 class="capitalize p-2"> {{block.body}}</h1>
           </div>
         {% elseif block.type == "featuredPost" %}
           {# mengambil data dari field featuredContent #}
@@ -21,13 +22,27 @@
           {# mengambil data dari field dalam matrix #}
           {% set header = block.header %}
           <div class="p-3">
-            <h1 class="text-3xl text-center m-auto border-b-2 border-black w-3/4 py-3"> {{block.header}} </h1>
             {% include "_includes/featured-content.twig" with {
-            'title' : header,
+            'header' : block.header,
             'bgHeader' : block.bgHeader,
             'borderColor' : block.borderColor,
             'headerColor': block.headerColor,
             'data' : post
+            } %}  
+          </div>
+        {% elseif block.type == "recentPost" %}
+          {% set data = craft.entries()
+            .section('plants')
+            .limit(block.limit)
+            .all() 
+          %}
+          <div class="p-3">
+            {% include "_includes/featured-content.twig" with {
+            'header': block.judul,
+            'bgHeader' : block.bgHeader,
+            'borderColor' : block.borderColor,
+            'headerColor': block.headerColor,
+            'data' : data
             } %}  
           </div>
         {% endif %}

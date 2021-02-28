@@ -31,15 +31,52 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: da6a7164-89d6-4931-8e0b-6a62c30e660d
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 27e7f5e1-4a06-499e-b0c3-ad53611c3469
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
   0d1e87cb-eacf-4e00-90a6-4dd9f6a666f9:
     contentColumnType: text
     fieldGroup: null
-    handle: tailwindClass
+    handle: headerColor
     instructions: ''
-    name: 'Tailwind Class'
+    name: 'Header Color'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  27e7f5e1-4a06-499e-b0c3-ad53611c3469:
+    contentColumnType: text
+    fieldGroup: null
+    handle: borderColor
+    instructions: ''
+    name: 'Border Color'
     searchable: false
     settings:
       byteLimit: null
@@ -56,9 +93,9 @@ fields:
   4c932ab7-eae0-4d25-bb1a-c0c848964528:
     contentColumnType: integer(10)
     fieldGroup: null
-    handle: numbeOfPost
+    handle: limit
     instructions: ''
-    name: 'Numbe Of Post'
+    name: limit
     searchable: false
     settings:
       decimals: 0
@@ -76,9 +113,28 @@ fields:
   9f78dd2a-9c45-46aa-89e6-867fa9d8cf38:
     contentColumnType: text
     fieldGroup: null
-    handle: head
+    handle: judul
     instructions: ''
-    name: Title
+    name: judul
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  da6a7164-89d6-4931-8e0b-6a62c30e660d:
+    contentColumnType: text
+    fieldGroup: null
+    handle: bgHeader
+    instructions: ''
+    name: 'Background Header'
     searchable: false
     settings:
       byteLimit: null

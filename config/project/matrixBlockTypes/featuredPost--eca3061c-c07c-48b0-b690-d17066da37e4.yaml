@@ -32,7 +32,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: a264cf52-d6dd-4a7b-9d3e-eaf836035522
+            fieldUid: 00605d0c-2c28-4f04-b30e-f95b33797b48
             instructions: null
             label: null
             required: false
@@ -41,7 +41,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 00605d0c-2c28-4f04-b30e-f95b33797b48
+            fieldUid: a264cf52-d6dd-4a7b-9d3e-eaf836035522
             instructions: null
             label: null
             required: false
